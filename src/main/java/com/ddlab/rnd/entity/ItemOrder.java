@@ -3,12 +3,12 @@ package com.ddlab.rnd.entity;
 import lombok.Data;
 
 @Data
-public class Order {
+public class ItemOrder {
 
     private String name;
     private String status;
 
-    public Order(String name) {
+    public ItemOrder(String name) {
         this.name = name;
     }
 }

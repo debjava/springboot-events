@@ -1,8 +1,8 @@
 package com.ddlab.rnd.service;
 
-import com.ddlab.rnd.entity.Order;
+import com.ddlab.rnd.entity.ItemOrder;
 
 public interface OrderService {
 
-    void cancellOrder(Order order);
+    void cancellOrder(ItemOrder order);
 }

@@ -1,14 +1,14 @@
 package com.ddlab.rnd.event;
 
-import com.ddlab.rnd.entity.Order;
+import com.ddlab.rnd.entity.ItemOrder;
 import lombok.Data;
 
 @Data
 public class CancelledOrderEvent {
 
-    private Order order;
+    private ItemOrder order;
 
-    public CancelledOrderEvent(Order order) {
+    public CancelledOrderEvent(ItemOrder order) {
         this.order = order;
     }
 }
