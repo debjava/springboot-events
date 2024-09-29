@@ -4,7 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 
-import com.ddlab.rnd.entity.ItemOrder;
+import com.ddlab.rnd.event.CancelEventRecord;
+import com.ddlab.rnd.event.NewOrderRecord;
 
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -13,9 +14,13 @@ public class OrderServiceImpl implements OrderService {
     private ApplicationEventPublisher eventPublisher;
 
     @Override
-    public void cancellOrder(ItemOrder order) {
-        if(order.getStatus().equalsIgnoreCase("cancelled")) {
-            eventPublisher.publishEvent(order);
-        }
+    public void createOrder(NewOrderRecord orderEvent) {
+        eventPublisher.publishEvent(orderEvent);
     }
+
+    @Override
+    public void cancelOrder(CancelEventRecord cancelEvent) {
+        eventPublisher.publishEvent(cancelEvent);
+    }
+
 }

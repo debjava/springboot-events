@@ -1,8 +1,11 @@
 package com.ddlab.rnd.service;
 
-import com.ddlab.rnd.entity.ItemOrder;
+import com.ddlab.rnd.event.CancelEventRecord;
+import com.ddlab.rnd.event.NewOrderRecord;
 
 public interface OrderService {
 
-    void cancellOrder(ItemOrder order);
+    void createOrder(NewOrderRecord orderEvent);
+
+    void cancelOrder(CancelEventRecord cancelEvent);
 }

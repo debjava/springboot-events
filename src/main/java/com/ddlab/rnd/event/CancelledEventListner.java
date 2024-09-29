@@ -10,19 +10,19 @@ public class CancelledEventListner {
 
     @Order(1)
     @EventListener
-    public void cancelOrder(ItemOrder order) {
-        System.out.println("Order is cancelled  ..."+order.getName());
+    public void cancelOrder(CancelEventRecord eventRecord) {
+        System.out.println("Order is cancelled  ..."+eventRecord.itemOrder().getName());
     }
 
     @Order(2)
     @EventListener
-    public void closeOrder(ItemOrder order) {
-        System.out.println("Order is  closed for operation ..."+order.getName());
+    public void closeOrder(CancelEventRecord eventRecord) {
+        System.out.println("Order is  closed for operation ..."+eventRecord.itemOrder().getName());
     }
 
     @Order(3)
     @EventListener
-    public void putBackOrder(ItemOrder order) {
-        System.out.println("Item has been put back in Inventory ..."+order.getName());
+    public void putBackOrder(CancelEventRecord eventRecord) {
+        System.out.println("Item has been put back in Inventory ..."+eventRecord.itemOrder().getName());
     }
 }
